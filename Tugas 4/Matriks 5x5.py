@@ -1,4 +1,5 @@
-matrix_a = [
+# Matriks A dan Matriks B yang akan dikalikan
+matriks_a = [
     [5, 7, 9, 11, 13],
     [2, 4, 6, 8, 10],
     [1, 3, 5, 7, 9],
@@ -6,7 +7,7 @@ matrix_a = [
     [10, 12, 14, 16, 18],
 ]
 
-matrix_b = [
+matriks_b = [
     [5, 8, 11, 14, 17],
     [2, 5, 8, 11, 14],
     [6, 10, 14, 18, 22],
@@ -14,16 +15,20 @@ matrix_b = [
     [5, 7, 9, 11, 13],
 ]
 
-result_matrix = []
-for i in range(len(matrix_a)):
-    row = []
-    for j in range(len(matrix_b[0])):
-        cell_sum = 0
-        for k in range(len(matrix_b)):
-            cell_sum += matrix_a[i][k] * matrix_b[k][j]
-        row.append(cell_sum)
-    result_matrix.append(row)
+# Inisialisasi list untuk menyimpan hasil perkalian
+hasil_matriks = []
 
-print("Matrix multiplication result:")
-for row in result_matrix:
-    print(row)
+# Perkalian matriks A dan matriks B
+for i in range(len(matriks_a)):
+    baris_hasil = []  # Menyimpan hasil untuk baris ke-i
+    for j in range(len(matriks_b[0])):
+        nilai = 0
+        for k in range(len(matriks_b)):
+            nilai += matriks_a[i][k] * matriks_b[k][j]
+        baris_hasil.append(nilai)
+    hasil_matriks.append(baris_hasil)
+
+# Menampilkan hasil perkalian matriks
+print("Hasil perkalian matriks:")
+for baris in hasil_matriks:
+    print(baris)
